@@ -1,0 +1,139 @@
+---
+layout: post
+title: 我错怪了你，曾哥
+categories:
+- fun
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+原本，我以为曾哥“<a href="http://www.douban.com/group/topic/7896766/" target="_blank">世界上另一个的我</a>”的论调除了向<a href="http://baike.baidu.com/view/279788.htm?fr=ala0_1_1" target="_blank">NANA</a>致敬以外就只有恶心人的用途了，但是今天……
+<h6>今天搜到的一段代码：</h6>
+<!--more-->
+<pre lang="cpp" line="1" escaped="true">#include <iostream>
+#include <string>
+#include <boost/asio.hpp>
+#include <boost/bind.hpp>
+#include <boost/smart_ptr.hpp>
+
+using namespace boost::asio;
+using boost::system::error_code;
+using ip::tcp;
+
+struct CHelloWorld_Service{
+     CHelloWorld_Service(io_service &iosev)
+         :m_iosev(iosev),m_acceptor(iosev, tcp::endpoint(tcp::v4(), 1000))
+     {
+     }
+
+    void start()
+     {
+        // 开始等待连接（非阻塞）
+         boost::shared_ptr<tcp::socket> psocket(new tcp::socket(m_iosev));
+        // 触发的事件只有error_code参数，所以用boost::bind把socket绑定进去
+         m_acceptor.async_accept(*psocket,
+             boost::bind(&CHelloWorld_Service::accept_handler, this, psocket, _1)
+             );
+     }
+
+    // 有客户端连接时accept_handler触发
+    void accept_handler(boost::shared_ptr<tcp::socket> psocket, error_code ec)
+     {
+        if(ec) return;
+        // 继续等待连接
+         start();
+        // 显示远程IP
+         std::cout << psocket->remote_endpoint().address() << std::endl;
+        // 发送信息(非阻塞)
+         boost::shared_ptr<std::string> pstr(new std::string("hello async world!"));
+         psocket->async_write_some(buffer(*pstr),
+             boost::bind(&CHelloWorld_Service::write_handler, this, pstr, _1, _2)
+             );
+     }
+
+    // 异步写操作完成后write_handler触发
+    void write_handler(boost::shared_ptr<std::string> pstr,
+         error_code ec, size_t bytes_transferred)
+     {
+        if(ec)
+             std::cout<< "发送失败!" << std::endl;
+        else
+             std::cout<< *pstr << " 已发送" << std::endl;
+     }
+
+private:
+     io_service &m_iosev;
+     ip::tcp::acceptor m_acceptor;
+};
+
+int main(int argc, char* argv[])
+{
+     io_service iosev;
+     CHelloWorld_Service sev(iosev);
+    // 开始等待连接
+     sev.start();
+     iosev.run();
+
+    return 0;
+}</pre>
+（因为各种无良的转贴当原创，我无法辨别原作者到底是谁）
+<h6>下面是我的代码：</h6>
+<pre lang="cpp"  line="1" escaped="true">#include <boost/asio.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/bind.hpp>
+#include <string>
+#include <iostream>
+
+using boost::asio::ip::tcp;
+
+class AServer{
+private:
+    tcp::acceptor m_acceptor;
+    std::string m_msg;
+
+public:
+    AServer(boost::asio::io_service& ioService)
+        :m_acceptor(ioService, tcp::endpoint(tcp::v4(),1000)), 
+            m_msg("hello world")
+    {};
+
+    void start(){
+        boost::shared_ptr<tcp::socket> newSocket(new tcp::socket(m_acceptor.io_service()));
+        m_acceptor.async_accept(*newSocket, 
+            boost::bind(&AServer::acceptHandler, this, boost::asio::placeholders::error, newSocket));                
+    }    
+
+private:
+    void acceptHandler(const boost::system::error_code& error, boost::shared_ptr<tcp::socket> pSocket){
+        if(!error){
+            boost::asio::async_write(*pSocket, boost::asio::buffer(m_msg), 
+                boost::bind(&AServer::writeHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
+            start();
+        }
+    }
+
+    void writeHandler(const boost::system::error_code& error, std::size_t bytes_transferred){
+        //do nothing
+        if(!error)
+            std::cout << "connected" << std::endl;
+    }
+};
+
+
+void main(){
+    try{
+        boost::asio::io_service ioService;
+        AServer server(ioService);
+        server.start();
+        ioService.run();
+    }
+    catch(std::exception& e){
+        std::cerr << e.what() << std::endl;
+    }
+}</pre>
+且不说函数名之类的相似程度，他连端口号都跟我选的一样……
+
+只能说我错怪善良的曾哥了——原来还真另一个<strong>影·曾哥</strong>在默默保卫着世界。

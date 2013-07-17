@@ -1,0 +1,20 @@
+---
+layout: post
+title: IIS7 Win7 ASP.NET MVC
+categories:
+- other
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+亲，Win7+iis7记得要everyone哦。（我是真不想吐槽Win7的管理员模式神马的了）
+亲，MVC部署记得要Copy To Local哦。（高效的各种代价）
+<h5>EDIT：</h5>
+事实证明，iis6远比iis7更x疼：
+
+先要全局都用asp_isapi来处理（效率，效率你妹啊），接下来，如果你装了.NET4.0，4.0还会自作多情的帮你路由（对MVC的无后缀路径）生成一些奇奇怪怪的路径，你还需要手动在注册表里禁用了4.0的EnableExtensionlessUrls。
+
+所以，要用ASP.NET MVC，还是用winserver2008+iis7.0吧~

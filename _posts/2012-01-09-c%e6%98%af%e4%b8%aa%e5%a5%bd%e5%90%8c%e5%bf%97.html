@@ -1,0 +1,27 @@
+---
+layout: post
+title: C#是个好同志
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+2011的年末总结文又被压倒DraftStack里了，出得来出不来还是个未知数。
+
+还是写点短的比较可靠，因为不会入栈。
+
+大牛说过：单纯的说java比c++好、c#比java好，是没有意义的，因为任何语言都有它的应用场景。换句话说：想用好一种语言，就是要了解该用成什么style。sql就是要做查插删改为了1ms的加速多想10000s、javascript就是要用出弱类型+函数式+伪面向对象的感觉、用C写代码必须geek必须让人看起来有很厉害的的样子。
+
+而要用好C#，你只要懒就好了，因为他不存在什么语言局限性，你不需要hack跟trick。
+
+因为C#什么都会：弱类型——哥有var有dynamic；函数式——哥有function有lambda；面向对象——哥笑了。
+
+sql你总不会了吧——哥还真会，因为哥有linq。
+
+以前真是小看了linq——今天遇到了个问题，需要比对新旧两个数组，新的比旧的的多了需要添、少了需要删、没变的肯定不能动——用了linq，生活就是如此简单：
+<pre lang="csharp">var toBeAdded = newArray.Except(oldArray);
+var toBeDeleted = oldArray.Except(newArray);</pre>

@@ -1,0 +1,19 @@
+---
+layout: post
+title: 直觉神马的不可靠啊
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+find('a')+find('b')要比find('a,b')快思密达，真相见下：
+
+<a href="http://jsperf.com/find-a-b-vs-find-a-find-b">http://jsperf.com/find-a-b-vs-find-a-find-b</a>
+
+然后stackoverflow的大神解析的真相背后的故事见下：
+
+<a href="http://stackoverflow.com/questions/7712850/finda-b-is-slower-than-findafindb-why">http://stackoverflow.com/questions/7712850/finda-b-is-slower-than-findafindb-why</a>

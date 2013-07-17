@@ -1,0 +1,44 @@
+---
+layout: post
+title: $.click vs $.live(click)
+categories:
+- exp
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+以前用JQuery习惯的方式就只是
+<pre lang="javascript">$(document).ready(function(){
+    $(".someClass").click(function(){
+        //do sth
+    });
+});</pre>
+而且很傻很天真的就只会这样给某些元素绑定事件处理函数，一度认为“一招鲜吃遍天”，这招简直可以解决所有前端事件响应问题了。
+<!--more-->
+然后，解决不了 的问题来了。
+<pre lang="javascript">
+$("someElement").append("<div id="problem" class="someClass">Click</div>");
+</pre>
+problemdiv怎么点都没反应了！！ 这没道理啊！！不合理，完全不合理！就算是动态添加的html内容，它class也叫someClass啊，点了someClass就该do sth啊，一定是浏览器的问题一定是浏览器的问题。
+IE9...失败...FF4...失败...Chrome...失败...
+嗯，这不是浏览器的问题，这是我的问题了。
+
+问题在哪儿？很简单，我又一次（为什么又要说又）把事情想简单了。如果html中间的event是以如此松散随意（单纯靠文本）的方式耦合在一起的话，估计html就是我这样的小白设计出来的了（或者说根本设计不出来）。是个event都应该有注册有响应，没有注册就有响应，哪里有这么好的事？所以说并不是problemdiv的class不是someClass，也不是someClass的点击事件没有响应函数，而是problemdiv根本就没有发出click事件啊！！
+快，速度给problemdiv绑定一个click事件，bind...bind...JQuery文档里果然找到了一个bind函数！
+等等，为什么bind函数那个分类下除了bind和unbind还有个live和die，神马状况？一看文档，这——————
+
+
+<blockquote>jQuery 给所有匹配的元素附加一个事件处理函数，即使这个元素是以后再添加进来的也有效。</blockquote>
+
+这也太逆天了吧，还不用手动再对每个新添加元素再bind的！
+于是，第二个版本的“一招鲜吃遍天”诞生了——
+<pre lang="javascript">$(document).ready(function(){
+    $(".someClass").live("click",function(){
+        //do sth
+    });
+});</pre>
+是的，当时就是这样，一种“我隐隐有点无敌了”的错觉油然而生。
+（自己吐槽：“是JQuery无敌了好吧？混蛋！”）

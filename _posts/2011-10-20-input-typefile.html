@@ -1,0 +1,35 @@
+---
+layout: post
+title: 关于input file 的种种
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+又是前段时间想写没写完的文，尽量简单的来写，最好不要more标签
+<h5>FileUpload limitations by iis&amp;asp.net</h5>
+
+<hr />
+
+首先，iis7的服务器限制了请求包的最大大小为30M、而asp.net2.0应用也在webconfig中httpruntime节点中限制了maxrequestlength，如果需要在asp.net+iis7的应用中上传大文件，需要更改这两处设置
+<h5>FileUpload limitations by browser</h5>
+
+<hr />
+
+每个浏览器对上传文件安全性的限制都不同，IE系列的浏览器不允许以script的方式点击上传按钮上传文件（$("input:file").click()是无效的），而chrome则不允许在页面中放置display：none的file（用javascript去触发其事件也无效）
+<h5>FileUpload asynly</h5>
+
+<hr />
+
+ajax都是利用xmlhttprequst，而xmlhttprequst的创建和使用是javascript的工作，javascript出于安全性不能访问本地文件。so：完全依赖js和html的异步上传是不可能的。（一些异步上传的插件都是基于flash实现的，其实这个想法（异步上传）挺不靠谱的，<a href="http://stackoverflow.com/questions/7595049/why-cant-i-upload-files-asynchronously">http://stackoverflow.com/questions/7595049/why-cant-i-upload-files-asynchronously</a>）
+<h5>FileUpload multiple style only way</h5>
+
+<hr />
+
+最后，想要实现像各种邮箱那样动态添加附件（添加不限数目的控件），其实只有一种方法（非html5条件下）：css hack =.=，虽然极度厌恶各种css2的hack，但除了把很多个input file一个一个的叠在一起（用postion:absolute和position控制，每点一个就多一个file叠在上面。后台需要多个判断，看每个file的length是不是等于0，等于0的话就是点击了上传但是取消了选择框或者是最后多出来的那个。。）以外，还真没有其他方法了。<strong>HTML5快点rock the world啊</strong>
+
+&nbsp;

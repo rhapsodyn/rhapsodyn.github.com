@@ -1,0 +1,26 @@
+---
+layout: post
+title: string iterator not dereferencable
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+其实这个runtime error的原因不一定就是程序对iterator的操作不当造成的。
+
+还有可能是string对象已经unavailable了。
+比如说：
+
+<!--more-->
+<pre lang="cpp" line="1">
+void fun(){
+   std::string msg("sth");
+   socket.send(msg);
+}
+</pre>
+乍一看完美无缺，但如果是send是async操作一下子就杯具了（原因很简单，如果你明白什么是async）。我就杯具了两个小时。
+（面对多线程编程，cs模式，同步异步这种难以调试的东西都聚集到一起了，我需要吐槽…………）

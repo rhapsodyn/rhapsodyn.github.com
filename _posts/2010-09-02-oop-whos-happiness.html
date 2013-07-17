@@ -1,0 +1,35 @@
+---
+layout: post
+title: 面向对象，是谁的幸福？
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+心血来潮，花了一下午读了一下<em><a href="www.shiqi.cc" target="_blank">石器时代</a></em>的源代码。
+
+没事读个这么老的游戏的源代码干吗？恩，<strong>前因</strong>是：我最近正在玩一个石器时代的私服（ps：not ashamed to tell you: 石器时代是我玩的第一款网游，也是一直以来我觉得最好玩的网游），然后又顺手Google了一份源代码，就不免有些邪恶的念头————看能不能从中读点什么出来（比如一些伪随机到底有多"伪"，能不能有大把握拿极品等等）。然后，<strong>后果</strong>是：我想要读的东西一点都没读出来，读懂了的，尽是些无关紧要的东西。最后，感想是：<strong>完败</strong>。
+<!--more-->
+其实这已经不是第一次完败了，只因为对手是它——<strong>C</strong>。
+
+并不是对C有偏见，作为现代编程语言最强大家族的godfather，<img class="alignnone" title="godfather" src="http://www.rhapsodyn.com/wp-content/uploads/2010/09/u1009406949861079817fm0gp0.jpg" alt="" width="91" height="140" />它有<strong>资历</strong>；作为操作系统开发的首选语言，它有<strong>能力</strong>。对C语言，每一个程序员都只有选择<strong>敬畏</strong>，更甚者，只能<strong>畏惧</strong>，比如说我。引用一个有趣的对C的评论：
+<blockquote>The last good thing written in C was Franz Schubert’s Symphony Number 9. — Erwin Dieterich, programmer</blockquote>
+若你觉得这条评论太过偏激，那你一定是曲解了评论者真实的用意。这里，good或者不good，并不是对用户来说，而是对程序员来说，对那些必须要读代码的苦命人来说的。除了对C语言有特殊感情或者是有受虐癖的程序员以外，我想没人会愿意去读C代码吧（当然不得不读除外）。C的不平易近人倒不是语法有多复杂或者功能有多么累赘，只是说，C语言所鼓励的编程风格或者说编程范式（Programming Paradigm）是不容易接受的。C语言鼓励程序员用机器的思维去理解世界，去做程序。那么一个程序员去看其他程序员写的程序的时候，就必须了解原作者是怎样用原作者理解的机器的思维来解释这个应用的，很<strong>绕</strong>是不是？其实C代码看起来会更绕。
+
+举个石器时代源代码里的例子：游戏里人物到了一定的等级后可以选择“转生”，也就是重新从一级开始升级，但是会继承上一转人物的一些属性点，我想要了解的是此处的“继承”到底是用什么样的公式来计算的。于是，便开始读源代码，浏览了一下源代码的文件名，很容易推断应该从带char字眼的文件入手，恩，char……我看看……char，char_base，char_event，char_data，char_angel……我开始晕了。不管了，先看char.c，打开文件，1000+的行数，满眼的#define和几百行的大函数，然后呢？没了…………这跟自己想象的char.reborn()差的太远了啊。罢了，耍点小聪明，我CTRL+F搜vtr、str之类的关键字总行了吧。最后，在200多个结果里我总算找到了自己想要的东西，略去过程的艰辛，结果也足够让我吐血了，那个一行长的公式竟然躲在char_base.c的一个叫login函数里。彻底无语。（我不知道是作者刻意隐藏还是如何，反正我是没看出一点逻辑）
+
+既然都出现了char.reborn()这样东西，就不得不说<strong>面向对象的</strong><strong>好</strong>了。面向对象编程，作为当今编程世界的主流（对不起，<a href="http://en.wikipedia.org/wiki/Functional_programming" target="_blank"><em>函数式编程</em></a>，你还是肥猪流）编程范式，绝对对得起<strong>best practice</strong>这个名头。不用你说教，我当然知道virtual table之类的东西是怎样得拖效率的后腿，我也明了纯粹的面向对象在有些时候是多么的死板和繁琐，我也见识过functional programming在并行计算的时候是怎样甩开面向对象几条街的，但我还是坚持认为把<strong>best</strong>作为面向对象的<strong>last name</strong>没有什么不合适的。
+
+还是那句话，best或者不best，都是对于程序员来说的。面向对象鼓励程序员用理解现实世界的方式去做程序，这下理解别人的程序就变得简单了，不用再绕来绕去了，除非你在看的源代码的作者来自M78星云。只要能理解，剩下的都好说了。你读不懂人家代码里的设计模式，你不知道什么叫架构。但模仿你总会吧，模仿的多了总能有些体会。就像我的高中数学老师说的那样：一道题你做不来，那就做同类型的题做一百次，你总该做的来了吧。
+
+只要你有心，<strong>企鹅</strong>也是能统治世界的。<img class="alignnone" title="企鹅" src="http://www.rhapsodyn.com/wp-content/uploads/2010/09/qi-e.jpg" alt="" width="100" height="134" />但，同样的好处（模仿able），C语言那样面向过程的编程语言是给不了的，因为过程是unique的，是copy不来的。复用性低，似乎正是面向过程的致命伤。也正是因为面向过程低下的复用性，重构和设计模式这样横跨技术和设计层面的突破注定只能出现在面向对象的时代。说到底，这一切的好都是<strong>可读性</strong>带来的，<strong>Martin Fowler</strong>这种等级的大神都说过类似的话：是个人都能写出机器可读的代码，而好的程序员写的是人类可读的代码。少了语言和编程范式的上的支持，可读性只是空谈。
+
+其实面向对象的<strong>best</strong>，还不仅仅是对于程序员的。君不见，java培训机构.net培训机构满天飞，为什么，因为面向对象入门简单啊。学起来简单，就意味着民工的廉价，老板只需要高价请能设计的人去搭个框架，剩下的交给贱价的IT民工去添砖加瓦就好了，同样是一栋房子，人力成本就省了不少，老板开心了。考虑到面向对象优秀的复用性，再造另一栋房子的成本就更低了，老板就更开心了。说到底，这个世界还是掌握在<strong>资本家</strong>的手里。这个世界，当然也包括了编程语言。我不知道现在最流行的开发方式的是TDD（Test Driven Development）还是BDD（Behavior Driven Development），但编程语言的进化一定是productive forces驱动的，从面向过程到面向对象，最实际的意义就是<strong>生产力进步</strong>了。
+
+没有什么是完美，当然也包括面向对象，只是一门技术而已，没有什么值得迷信的，只是你必须承认，在我们现在所处的这个时空里，它是<strong>Best</strong>的。
+
+你看，面向对象，是可爱的程序员，是万恶的资本家，是全人类的，<strong>幸福</strong>啊。

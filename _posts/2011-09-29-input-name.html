@@ -1,0 +1,21 @@
+---
+layout: post
+title: input name
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+平时不是用webform的控件就是用htmlhelper，再不然就jquery.ajax加上$("#id").val()了，早就搞忘了input还有个属性叫name。
+
+今天想做个不用控件上传的功能（当然也不用mvc），发现打死后台用request.files找不到货，还以为是&lt;input type="file"&gt;的问题，后来把form的enctype改成"multipart/form-data"了还是不能解决问题。
+
+又是一番瞎搞。
+
+最后用chrome的开发工具监视网络的时候发现：某个input的name没有指定的时候，form在传到post到后台的时候根本就不会带上那个input！
+
+-.- 囧的一塌糊涂

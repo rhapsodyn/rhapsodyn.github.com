@@ -1,0 +1,20 @@
+---
+layout: post
+title: 二了 again
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<a href="http://jsperf.com/chain-vs-step">http://jsperf.com/chain-vs-step</a>
+<pre lang="javascript">
+$target.hide().show;
+/*-------------------*/
+$target.hide();
+$target.show();
+</pre>
+为什么我会觉得这两个语句效率有差距。。。。

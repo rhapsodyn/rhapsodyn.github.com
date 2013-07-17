@@ -1,0 +1,24 @@
+---
+layout: post
+title: 不只有document才能ready的！
+categories:
+- tech
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+想做一个计算iframe载入耗时的功能，自然会需要对iframe的onload事件做点文章。
+然后就发生了一些奇奇怪怪的事情：jquery无法绑定iframe的onload、但直接inline式的写onload="function(){blahblah}"却有效果：
+
+<a href="http://jsfiddle.net/rhapsodyn/mk5VE/2/">http://jsfiddle.net/rhapsodyn/mk5VE/2/</a>
+
+在so上问了一下，有人回答说是因为jquery绑定的太晚了，也不知道是不是这个原因。（最近是真有想读webkit源代码的冲动，十分的）。
+
+原因没问出来，解决办法倒是找到了——$("iframe").ready()完美解决：
+
+<a href="http://jsfiddle.net/rhapsodyn/mk5VE/3/">http://jsfiddle.net/rhapsodyn/mk5VE/3/</a>
+
+就这样吧。。。咱暂时只满足与知其然好了

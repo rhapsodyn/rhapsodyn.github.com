@@ -1,0 +1,29 @@
+---
+layout: post
+title: 不定参数的存储过程
+categories:
+- other
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+先吐槽一下自己：数据库还是太菜啊。
+
+再说正题：正题就是网上搜一下，csdn有篇文章就有提供完美的解决方案，但是其中isnull()的方案是有bug的，因为sqlserver的null只能用is不能用=判断，所以只能如下操作了：
+
+&nbsp;
+<pre lang="SQL">
+CREATE PROCEDURE PROC_BLAHBLAH
+@PRAM1 INT = NULL,
+@PRAM2 INT = NULL
+AS
+BEGIN
+SELECT * FROM TBL_BLAHBLAH
+WHERE 1=1
+   AND (COLUMN1 = @PRAM1 OR @PRAM1 IS NULL)
+   AND (COLUMN2 = @PRAM2 OR @PRAM2 IS NULL)
+END
+</pre>
