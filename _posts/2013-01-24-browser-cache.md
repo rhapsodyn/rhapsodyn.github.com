@@ -47,7 +47,7 @@ expire和cache-control是一对，用来标明资源缓存的有效时间。expi
 
 请求了以后，发现if-modified-since和last-modified吻合了，不是还会返回304吗？
 
-亲，你是否忘了304的status code的全部？<strong>304 not modified</strong>！既然header返回了not modified的，什么sb浏览器还会去继续请求body啊（实事证明我又sb了，RFC就规定了304 response根本就没有body）。所以304的请求比起200来，还是要少了不少流量（可测试的，但不要傻到测localhost）（chrome终于奇葩了一回，命中缓存的状态码竟然是 200 from cache）
+亲，你是否忘了304的status code的全部？**304 not modified**！既然header返回了not modified的，什么sb浏览器还会去继续请求body啊（实事证明我又sb了，RFC就规定了304 response根本就没有body）。所以304的请求比起200来，还是要少了不少流量（可测试的，但不要傻到测localhost）（chrome终于奇葩了一回，命中缓存的状态码竟然是 200 from cache）
 
 所以，google的最佳实践就讲的通了，1）把cache时间竟然拉长，能不请求就不请求。2）如果内容变了，那我就给你一个新的位置，你就必须来个新请求
 

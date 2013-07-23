@@ -12,4 +12,4 @@ meta:
 ---
 难得能在周一早上来这么早的。
 
-难得在周一早上能看到这么有营养的东西：<a href="http://news.cnblogs.com/n/162954/">http://news.cnblogs.com/n/162954/</a>
+难得在周一早上能看到这么有营养的东西：[http://news.cnblogs.com/n/162954/](http://news.cnblogs.com/n/162954/)
