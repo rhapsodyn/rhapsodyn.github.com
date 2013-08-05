@@ -2,3 +2,4 @@ name: Site_Of_R
 pygments: true
 timezone: Asia/Shanghai
 paginate: 20
+markdown: redcarpet
