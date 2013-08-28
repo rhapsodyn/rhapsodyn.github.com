@@ -36,4 +36,4 @@ public RedirectResult(string url, bool permanent) {
 public RedirectResult(string url);
 {% endhighlight %}
 
-我就呵呵了，不是ArgumentNullException么，为啥连`string.Empty`也抛？
+我就呵呵了，不是说好的只有在url是null的时候抛ArgumentNullException么，为啥连`string.Empty`也抛？
