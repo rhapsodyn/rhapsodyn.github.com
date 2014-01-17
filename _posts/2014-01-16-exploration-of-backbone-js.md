@@ -62,6 +62,10 @@ backbone带来的仅仅是最基础的一些helper和**组织代码和逻辑的�
 
 不过从现阶段来看，那个叫JQuery的东西，真是越来越大了，着实应该好好黑一下。
 
+### THE future
+
+web的未来应该是属于web component或者是类似的东西的，从这个角度来看，angularjs似乎更能契合web的发展方向。但从另一个角度看，ng-blah或者是data-bind在**现行**的规范中确实还挺烦人了，logic很容易就带入了html里，破坏掉了html/css/js的分离。有种php/asp的既视感，不爽。
+
 ## 总结
 
 Backbonejs挺不错的。
