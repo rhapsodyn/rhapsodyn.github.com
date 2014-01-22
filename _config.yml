@@ -1,6 +1,13 @@
 name: Site_Of_R
-pygments: true
+description: rhapsodyn's blog
+meta_description: rhapsodyn's blog
 timezone: Asia/Shanghai
-paginate: 20
+
 markdown: redcarpet
+pygments: true
+logo: false
+paginate: 15
+
+# Details for the RSS feed generator
 url: http://www.rhapsodyn.com
+author: rhapsodyn

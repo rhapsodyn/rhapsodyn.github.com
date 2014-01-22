@@ -5,7 +5,7 @@ date: 2013-08-22
 categories: tech
 ---
 
-![hehe](/images/jquery-hehe.gif)
+![hehe](/assets/images/jquery-hehe.gif)
 
 胜过千言以后再多说几句：其实这篇应该才是part1，起到提纲挈领之用。	
 在我看来JQuery并不是真正的suck（比起我的code已经高了很多的档次了），只是在有些方面表现的并不完美，因为本来就不可能有完美的东西。但是如果我们真正存心要黑，鸡蛋里面挑骨头也不会很困难的，对吧？
