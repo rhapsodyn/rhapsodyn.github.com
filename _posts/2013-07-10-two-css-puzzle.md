@@ -7,6 +7,8 @@ categories: tech
 
 突然又觉得说是坑有点太过了，定位为trick应该比较合适
 
+<!--more-->
+
 ### hasLayout ###
 
 [这个文章](http://www.satzansatz.de/cssd/onhavinglayout.html)已经写的相当的清楚明了了，我就只简单吐槽一下：这么奇葩的事情也只有M$干的出来了(想了一下，写的是*M$*而不是*M$的程序员*，因为换我的话，可能也会干出类似的事情吧……)

@@ -10,6 +10,8 @@ published: true
 
 心态好一点，少点吐槽多点思考，才是，真的。
 
+<!--more-->
+
 ### Promise
 
 早就想写点promise的东西了，不过一想到linus大神的“talk is cheap，show me the code”，决定还是要code先行。

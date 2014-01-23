@@ -37,6 +37,13 @@ about: 'about.html'
         <section class="post-excerpt">
             {{post.excerpt}}
         </section>
+        {% if post.excerpt.size != post.content.size %}
+        <div class="post-readmore">
+            <a href="{{ post.url }}">read more</a>
+        </div>
+        {% else %}
+        <div class="post-end">END</div>
+        {% endif %}
     </article>
 
     {% endfor %}

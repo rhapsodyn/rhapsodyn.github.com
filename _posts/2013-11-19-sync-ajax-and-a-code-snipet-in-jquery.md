@@ -10,6 +10,8 @@ published: true
 
 遇到的公共框架的bug（异步操作返回之前不该执行的操作执行了）想要hack一下解决，想到jquery里有这样的用法：`$.ajax(url, { async: false })`，就跑去看jquery.ajax的源代码，看看jq是怎么block掉js执行的。ctrl+f了半天木有找到`while`，觉weird，觉厉。开始仔细的一点一点的看源代码，还是没看到什么地方有奇怪的trick可以block js执行。
 
+<!--more-->
+
 换个思路，到MDN看了一下XmlHttpRequest的API，竟发现
 
 {% highlight javascript %}

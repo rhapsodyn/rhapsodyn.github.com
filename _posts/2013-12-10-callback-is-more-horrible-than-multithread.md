@@ -16,6 +16,8 @@ API.C();
 
 的时候，灾难就降临了。我对这个library的设计的本意是所有接口都是声明式（Declarative programming）的，但现在任意调换上面三句代码的顺序，行为竟然不一样了。更扯的是，就算是用同样是顺序调用，产生的行为也会不一样。听起来很像是多线程是吧？
 
+<!--more-->
+
 问题出在——三个API可能会对同一个dom元素上的同一个event注册三个handler，而其中的某两个handler中有类似
 
 {% highlight javascript %}

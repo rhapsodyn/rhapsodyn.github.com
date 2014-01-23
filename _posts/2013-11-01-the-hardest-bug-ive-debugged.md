@@ -10,6 +10,8 @@ published: true
 
 全部都是看这个帖子有感[What's the hardest bug you've debugged?](http://www.reddit.com/r/programming/comments/1pk14s/dave_baggetts_answer_to_programming_interviews/)
 
+<!--more-->
+
 先说文章本身——只有四个字——不明觉利，我的感觉是这样，连作者自己也是这种感觉。（我就不吐槽最后那个渣总结了，什么“用到了量子力学debug”，真心不知道怎么得出这个结论的）
 
 然后发现程序员真心是一类奇怪的生物，什么东西都能拿来炫耀：最难的bug、最奇葩的注释、最难懂的代码etc，简直就是“伤疤是男人勋章”心理的升级版。

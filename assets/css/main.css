@@ -33,3 +33,10 @@ img.profile {
   	border-radius: 50px;
 }
 
+/* customize */
+div.post-readmore { margin-top: 1em; }
+div.post-end {
+	font-size: 2rem;
+    color: #9EABB3;
+    margin-top: 1em;
+}

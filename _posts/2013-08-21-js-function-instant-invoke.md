@@ -7,6 +7,8 @@ categories: tech
 
 黑JQuery的系列文章一直都还没写出来，今天读JQuery代码，反倒是多了点体会。（话说回来，JQuery的源代码可能是让我收益最多的JS代码了）
 
+<!--more-->
+
 原来一直觉得`(function(){ /*do something*/ })();`就只在闭包的时候有点用。立即调用，把`function(){}`这个壳子去掉不就行了。
 
 我只能说，我又一次图样图森破了。	

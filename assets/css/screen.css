@@ -132,6 +132,7 @@ h2 {
 
 h3 {
     font-size: 3.5rem;
+    margin-top: 1em;
 }
 
 h4 {
@@ -705,12 +706,12 @@ margin on the iframe, cause it breaks stuff. */
 
 /* The subscribe icon on the footer */
 .subscribe {
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: -14px;
     left: 50%;
-    margin-left: -15px;
+    margin-left: -20px;
     border: #EBF2F6 1px solid;
     text-align: center;
     line-height: 2.4rem;
@@ -722,7 +723,7 @@ margin on the iframe, cause it breaks stuff. */
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
     color: #D2DEE3;
-    font-size: 10px;
+    font-size: 20px;
     position: absolute;
     top: 9px;
     left: 9px;

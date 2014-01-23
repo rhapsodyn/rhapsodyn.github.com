@@ -12,13 +12,16 @@ meta:
 ---
 
 ###先说结论：###
+
 1. Google最牛逼。
 2. 利用浏览器缓存的最佳实践是：
 	让response header里的Cache-Control：max-age=天长地久 
 	给每个静态资源打上fingerprint（有proxy挡在前面就用改文件名，没proxy改querystring就够了）
 
 **再来开始扯**
+
 <!--more-->
+
 ###Last-Modified ETag Expire Cache-Control###
 首先，他们都是http-header，ETag和Cache-Control要“潮一点”，生在http1.1时代。
 
