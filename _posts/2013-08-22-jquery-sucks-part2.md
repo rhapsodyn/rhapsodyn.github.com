@@ -3,6 +3,7 @@ layout: post
 title: JQuery Sucks (2) —— 一图胜千言
 date: 2013-08-22
 categories: tech
+excerpt: <p>胜过千言以后再多说几句：其实这篇应该才是part1，起到提纲挈领之用。	</p>
 ---
 
 ![hehe](/assets/images/jquery-hehe.gif)
