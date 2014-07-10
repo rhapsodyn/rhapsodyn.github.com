@@ -1,7 +1,8 @@
 /* Rosario. I've added and changed few things. Feel free to change it as you like */
 
 /* Font size of 2.0 is too big, I'll reduce it */
-body {font-size: 1.9rem;}
+/* 1.9 still too big for Chinese, reduce more*/
+body {font-size: 1.7rem;}
 
 /* Adding some text shadow*/
 .site-head {text-shadow: 2px 2px #234;}
@@ -39,4 +40,7 @@ div.post-end {
 	font-size: 2rem;
     color: #9EABB3;
     margin-top: 1em;
+}
+del {
+	color: gray;
 }

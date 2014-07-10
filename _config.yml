@@ -4,7 +4,7 @@ meta_description: rhapsodyn's blog
 timezone: Asia/Shanghai
 
 markdown: redcarpet
-pygments: true
+highlighter: rouge
 logo: false
 paginate: 15
 excerpt_separator: "<!--more-->"
