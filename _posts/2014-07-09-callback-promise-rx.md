@@ -28,7 +28,7 @@ publish: true
 
 类似threading和asynchronous这样的东西就是难以理解的（光拼写就很难了），因为人的惯性思维都是串行的，非异步和单线程的编程也是串行的，当我写下
 
-{% highlight shell %}
+{% highlight javascript %}
 operation_one
 operation_two
 {% endhighlight%}
