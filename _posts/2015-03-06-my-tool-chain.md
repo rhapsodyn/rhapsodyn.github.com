@@ -3,7 +3,7 @@ layout: post
 title: My Tool Chain
 date: 2015-03-06
 categories: tech
-publish: false
+publish: true
 ---
 
 > timediff(now, lastpost).month \> 6
@@ -49,4 +49,8 @@ Github for Windows这个GUI我觉得比tortoise还要好用，for Mac就更不�
 
 ### ConEnu
 
+TODO
+
 ### What's More
+
+TODO
