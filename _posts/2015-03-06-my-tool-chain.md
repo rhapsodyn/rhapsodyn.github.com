@@ -24,7 +24,7 @@ Alfred已经太有名了，无需多言。在windows上我能找到的（用过�
 
 ### Chrome
 
-也算做过一段时间的web，各种浏览器出于工作也好个人喜好也罢，都用过一圈了，最后还是觉得Chrome最**顺手**（这类软件没有什么最好，只有最顺手）。    
+也算做过一段时间的web开发，各种浏览器出于工作也好个人喜好也罢，都用过一圈了，最后还是觉得Chrome最**顺手**（这类软件没有什么最好，只有最顺手）。    
 好像原来的原来还写过firefox plugin的post，插件这玩意也就是锦上添花，firefox现在跟Chrome比已经算不上*锦*了。    
 具体的有多*锦*就不表了，现在必须的*花*只有手势这一朵了（还是稍微一提：Chrome的帐号系统确实好用，至少不用像以前的firefox一样每次重装都折腾一次插件了）。    
 
@@ -32,7 +32,7 @@ Alfred已经太有名了，无需多言。在windows上我能找到的（用过�
 
 Visual Studio出了[community](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx)版本以后，Windows上*最强*的IDE基本就没任何争议了，随着MS越来越拥抱开源，其在社区里的口碑也越来越好了，现在我黑MS的欲望都越来越弱了。    
 Sublime作为Mac/Windows上都通用的Editor，对于我们这类小白开发（大神的Vi/Emacs都是比VS还厉害<del>难用</del>的多呢），着实是比其他文本编辑器好用了一大截。    
-这两个共同的优点就是1.feature多 2.插件多 3.GUI功能也很好用。诚然用鼠标的效率比不上用键盘，但鼠标悬停显示各种变量怎么也比用`print`和`pp`让人越快很多吧。
+这两个共同的优点就是1.feature多 2.插件多 3.GUI功能也很好用。诚然用鼠标的效率比不上用键盘，但鼠标悬停显示各种变量怎么也比用`print`和`pp`让人愉快很多吧。
 
 ### Python/Ruby/Github
 
