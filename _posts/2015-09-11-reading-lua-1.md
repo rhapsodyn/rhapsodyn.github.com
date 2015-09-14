@@ -24,7 +24,7 @@ publish: true
 
 没错，是他，是他，就是他：
 
-![F5](/assets/images/f5.jpg)
+![F5](/assets/images/F5.jpg)
 
 跟广为流传的MikePaul推荐的[Reading Order](https://www.reddit.com/comments/63hth/ask_reddit_which_oss_codebases_out_there_are_so/c02pxbp)不同的是，我觉得还是一上来就F5靠谱的多。默念函数名也是读F10也是读，running code总是比plain code更生动易懂（还有一种可能是我水平太low，大神都是可以直接通读脑中构建running state的上下文的）。当然，所谓“F5读代码大法”，并不是直接在`main`的第一行打上一个断点以后就不停的`F10`和`F11`就行了。而是要在了解源代码大体结构（下一篇具体来写）的基础上：
 
