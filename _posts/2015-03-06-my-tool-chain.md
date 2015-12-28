@@ -19,7 +19,7 @@ publish: true
 Alfred已经太有名了，无需多言。在windows上我能找到的（用过的）最好的替代品就是[Launchy](http://www.launchy.net/)了。  
 实话实说，win7点了win键以后输入程序名相对xp来说已经有了很大提升了，但比起launchy这种专业的软件来说还是差了一大截。    
 特别是可以自定义程序搜索路径和记住最近打开的程序（e.g：我现在alt+space | c就是conemu，alt+space | ch就是chrome，alt+space | u就是unity）这两个feature，真心好用。   
-关于这种全局快捷键app的必要性，上古大神Alan Kay（可能记错）就说过：newbie用鼠标，frequent user用快键盘+鼠标，pro只用键盘。不用鼠标带来的效率<del>逼格</del>可以详询*nix over windows党。    
+关于这种全局快捷键app的必要性，上古大神Alan Kay（可能记错）就说过：newbie用鼠标，frequent user用快键盘+鼠标，pro只用键盘。不用鼠标带来的效率<del>逼格</del>可以详询*nix over Windows党。    
 最后再说一个Launchy的好：donate只要2$，对比起sublime的70$（我觉得sublime也很好，但是没有好到35倍 || 如果我的工资发的不是￥而是$我就买），就是买买买啊。
 
 ### Chrome
@@ -49,7 +49,7 @@ Github for Windows这个GUI我觉得比tortoise还要好用，for Mac就更不�
 
 ### ConEnu
 
-TODO
+在Windows下——支持tab页+自定义font+支持ctrlc+ctrlv+最大化窗口的命令行工具——就我用过的——只此一家，所以没得选了。
 
 ### What's More
 
