@@ -20,6 +20,8 @@ publish: true
 
 今年眼看就要结束，总算是能沉淀一些在我看来能算作是Thinking的东西，还挺好的。
 
+<!--more-->
+
 ### Blah Blah Blah
 
 有关Haskell的**Purity**——多么不容易出BUG，多么适合Concurrency；**Laziness**——多么高效，你随意google两篇文章都会吹的天花乱坠，毕竟现在语言这么多，要想出头都要有能抓眼球的卖点。
