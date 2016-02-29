@@ -3,8 +3,8 @@ description: rhapsodyn's blog
 meta_description: rhapsodyn's blog
 timezone: Asia/Shanghai
 
-markdown: redcarpet
-pygments: true
+markdown: kramdown
+highlighter: pygments
 logo: false
 paginate: 15
 excerpt_separator: "<!--more-->"
