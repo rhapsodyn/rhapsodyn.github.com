@@ -4,7 +4,7 @@ title: About me
 ---
 {
 
-&nbsp;&nbsp;&nbsp;&nbsp;Meta: "[Kings](http://www.nba.com/kings/) fans && Coder, currently working at Tecent, living in Shenzhen.",
+&nbsp;&nbsp;&nbsp;&nbsp;Meta: "[Kings](http://www.nba.com/kings/) fans && Coder, <del>currently working at Tecent, living in Shenzhen.</del>",
 
 &nbsp;&nbsp;&nbsp;&nbsp;Stackoverflow: "[http://stackoverflow.com/users/342366/rhapsodyn](http://stackoverflow.com/users/342366/rhapsodyn)",
 
