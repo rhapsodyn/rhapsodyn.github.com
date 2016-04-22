@@ -2,10 +2,10 @@ name: Site_Of_R
 description: rhapsodyn's blog
 meta_description: rhapsodyn's blog
 timezone: Asia/Shanghai
-
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: false
+gems: [jekyll-paginate]
 paginate: 15
 excerpt_separator: "<!--more-->"
 
