@@ -63,6 +63,7 @@ Promise是一味解决callback hell的好药，但并不能根治，还是希望
 1. 时区问题有点烦，需要在配置里加个`+8:00`，DB里存utc确实是解决globalization的好办法，但几个项目需要呢？
 1. migration的功能看起来很美，但是动不动就要drop table，你敢用？
 1. model里没定义的field，写在query的attributes里，并不会报错，你看debug信息里生成的sql也有，但最后的model就是没有，有点蛋疼
+
 ``` javascript
 const foo = sequelize.define('foo', {
     a: DataTypes.STRING(512),
@@ -95,6 +96,7 @@ Expressjs自带的server static十分简单，就是单纯的每次读文件（3
 1. deploy localhost有点麻烦（需要把ecosystem.js里的host写成localhost之类的，google一下有很多人问过），因为设计初衷是部署到remote机器（确实是合理的）
 1. startup脚本用其他用户，必须要`sudo pm2 startup --user other --hp /var/other`，su到其他user，报一些风马牛不相及的error
 1. 执行deploy的目录必须要`git init`过 ？？？
+
 ![nickyong](http://img.mp.itc.cn/upload/20160828/df8db1060c5342af82aeb6a9dc43ca42_th.jpeg)
 
 #### Newbie-thing
