@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用node_redis，不需要pooling
-date: 2017-03-19
+date: 2018-03-19
 categories: tech
 publish: true
 ---
