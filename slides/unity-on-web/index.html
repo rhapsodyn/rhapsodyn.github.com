@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>UnityOnWeb</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					#Unity On Web
+
+					###项目build到web方案选型						
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Web Player
+					</section>
+					<section data-markdown>
+						### NPAPI
+
+						+ 浏览器提供的沙盒环境的API（严格来说flash和silverlight都是用的NPAPI）
+						+ 即将被抛弃
+							+ Chrome45+已经放弃
+							+ Opera37今年5月开始已经放弃
+							+ Firefox2016年底放弃
+							+ JDK9以后不再支持JRE的浏览器插件
+							+ IE5以后一直都是用ActiveX了
+						+ 毕竟不是长久之计
+					</section>
+					<section data-markdown>
+						### Unity WebPlayer
+
+						+ 这个方案就是使用的NPAPI（跟flashplayer一样，首先需要下一个独立的player）
+						+ [u3d web player roadmap](http://blogs.unity3d.com/2015/10/08/unity-web-player-roadmap/)
+						+ 结论是：
+						>but Unity 5.4 (to be released in March 2016) will no longer ship with Web Player suppor
+					</section>
+					<section data-markdown>
+						### 浏览器市场占有率
+
+						![browser](image/browser.png)
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						## WebGl
+					</section>
+					<section data-markdown>
+						### WebGl facts
+
+						+ Javascript version OpenGL
+						+ Modern pipeline
+						+ Shader in GlSl
+						+ 浏览器作为壳直接调用系统级图形API，可使用GPU
+					</section>
+					<section data-markdown>
+						### Unity webgl
+						
+						+ Unity5.3以后webgl成为正式的build选项
+						+ 实际上是IL2CPP项目的延伸（which i heavily untrusted）
+						+ 好吧，就是IL2CPP + emscripten
+						+ 现阶段不管是unity的webgl build还是webgl本身都不算是成熟的产品（大致浏览了下，坑还挺多）
+						+ 不过unity优化的还是不错（indexedDB缓存、ab包压缩算法等等）
+						+ unity整个开发的workflow和api基本保持不变
+					</section>
+					<section data-markdown>
+						### webgl支持情况
+
+						![webgl](image/webgl.png)
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						## WebGl vs OpenGl vs OpenGles
+
+						### mac standalone build
+
+						![mac](image/mac.png)<!-- .element: style="width:45%" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						## WebGl vs OpenGl vs OpenGles
+
+						### chrome49
+
+						![chrome](image/chrome.png)<!-- .element: style="width:45%" -->
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+						## WebGl vs OpenGl vs OpenGles
+
+						### safari9.0
+
+						![safari](image/safari.png)<!-- .element: style="width:45%" -->
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Webgl Native
+					</section>
+					<section data-markdown>
+						### 一条看起来难得多的路
+
+						+ 直接用opengl编程，from scratch
+						+ 开发难度大，但是可控性更强
+						+ 只是跟mobile app共用美术资源（可能是ab级别，也可能是model级别）
+						+ 好在还是有一些类似glew之类的库可以用
+					</section>
+					<section data-markdown>
+						### threejs
+
+						+ [http://threejs.org/](http://threejs.org/)
+						+ [sample]()
+					</section>
+				</section>
+
+				<section>
+					<h2>Matrix</h2>
+					<table>
+						<tr>
+							<td></td>
+							<td>WebPlayer</td>
+							<td>Unity Webgl Build</td>
+							<td>Native Webgl</td>
+						</tr>
+						<tr>
+							<td>兼容性</td>
+							<td>被抛弃</td>
+							<td>逐渐开始兼容</td>
+							<td>逐渐开始兼容</td>
+						</tr>
+						<tr>
+							<td>现有Unity代码重用行</td>
+							<td>基本可重用</td>
+							<td>基本可重用</td>
+							<td>不可重用</td>
+						</tr>
+						<tr>
+							<td>性能</td>
+							<td>NA</td>
+							<td>一般</td>
+							<td>可优化空间大</td>
+						</tr>
+						<tr>
+							<td>易用性</td>
+							<td>Unity + C# = easy</td>
+							<td>Unity + C# = easy</td>
+							<td>JS + wild = hard</td>
+						</tr>
+					</table>
+				</section>
+
+				<section data-markdown>
+					# THE END
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
