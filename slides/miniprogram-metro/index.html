@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Presatation by rhapsodyn</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				## 4User & 4Convenient
+				#### 地铁小程序规划建议
+				by 美亚联
+			</section>
+
+			<section>
+				<section data-markdown>
+					## 需求整理
+				</section>
+				<section data-markdown>
+					### 目标
+					+ 针对 *更年轻* 的用户群体
+					+ 为了 *更好* 的用户体验
+					+ 坐拥 *更多* 的"自来水"
+				</section>
+				<section data-markdown>
+					### 功能优先级
+					1. 便捷性(站点详情，出行规划，紧急播报)
+					1. 功能性(线路图，修建计划进度，运营时刻表)
+					1. 内容性(趣味地铁，地铁博物馆，商城)
+				</section>
+				<section data-markdown>
+					### 差异化
+					1. 支付
+					1. 站点详情数据(拥挤程度，基础设施等)
+					1. MORE
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown>
+					## UI
+				</section>
+				<section>
+					<h3>主页</h3>
+					<img data-src="home.png" style="width: 30%">
+				</section>
+				<section>
+					<h3>乘车码</h3>
+					<img data-src="home-qr-code.png" style="width: 30%">
+				</section>
+				<section>
+					<h3>站点详情</h3>
+					<img data-src="station-detail.png" style="width: 23%">
+				</section>
+			</section>
+
+			<section>
+				<section data-markdown>
+					## 运营为王
+					+ 持续迭代
+					+ 关注数据
+					+ 活动运营
+				</section>
+			</section>
+
+			<section data-markdown>
+				## END
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
