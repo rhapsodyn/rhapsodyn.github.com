@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2021 Retospective
-date: 2021-01-31
+date: 2022-01-31
 categories: tech
 ---
 
