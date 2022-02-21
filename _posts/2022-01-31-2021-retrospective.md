@@ -19,8 +19,8 @@ categories: tech
 1. *稍微能*改 Flutter engine，能读 game engine
 1. 能写 managed server runtime，java 不会且讨厌
 1. *稍微能*写应用层 network
-1. *稍微能*写 native (Rust or C)
-1. *稍微能*做 instruction-level （by valgrind eg.） 级别的优化
+1. *稍微能*写 *nix native (Rust or C)
+1. *稍微能*做较为深入的调优 （by flamegraph/valgrind eg.）
 
 虽然这技能树跟各种[攻略](https://coolshell.cn/articles/18360.html)上的可能差距较大，但自己玩的还算快乐。各种代码（从 three.js 到 tokio.rs）和 paper （从 SIGGRAPH 到 USENIX）读起来也都没啥障碍，想学点新东西还是挺快的。可能乱点技能树后触发了隐藏 bonus：可用技能点+++。
 
